@@ -134,75 +134,46 @@ function App() {
       <div class="w-full relative">
         <div class="swiper fraction-slide-carousel swiper-container relative">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">
-                <span class="text-3xl font-semibold text-indigo-600">
-                  Slide 1{" "}
-                </span>
+            <div className="swiper-slide">
+              <div className="bg-indigo-50  h-96 flex justify-center items-center">
+                <img
+                  src="https://i.pinimg.com/originals/aa/96/94/aa9694d4a2e2db1a5dfbabac200cc349.png" // Reemplaza esta URL con la URL de tu imagen
+                  alt="Descripción de la imagen 1" // Asegúrate de proporcionar un texto alternativo
+                  className="h-full w-full object-cover   " // Ajusta las clases según sea necesario
+                />
               </div>
             </div>
-            <div class="swiper-slide">
-              <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">
-                <span class="text-3xl font-semibold text-indigo-600">
-                  Slide 2{" "}
-                </span>
+            <div className="swiper-slide">
+              <div className="bg-indigo-50  h-96 flex justify-center items-center">
+                <img
+                  src="https://i.pinimg.com/originals/d5/52/d0/d552d04d267525ab2cda53ff83f2c833.jpg" // Reemplaza esta URL con la URL de tu imagen
+                  alt="Descripción de la imagen 2" // Asegúrate de proporcionar un texto alternativo
+                  className="h-full w-full object-cover " // Ajusta las clases según sea necesario
+                />
               </div>
             </div>
-            <div class="swiper-slide">
-              <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">
-                <span class="text-3xl font-semibold text-indigo-600">
-                  Slide 3{" "}
-                </span>
+            <div className="swiper-slide">
+              <div className="bg-indigo-50  h-96 flex justify-center items-center">
+                <img
+                  src="https://64.media.tumblr.com/3ec70568f090c4fd2902a542b85c11c6/920acd6e6d068e7f-d4/s2560x500/77c26d4d260e290b01eb4d174d1c850a8689ae2d.png" // Reemplaza esta URL con la URL de tu imagen
+                  alt="Descripción de la imagen 3" // Asegúrate de proporcionar un texto alternativo
+                  className="h-full w-full object-cover " // Ajusta las clases según sea necesario
+                />
               </div>
             </div>
           </div>
-          <div class="flex items-center gap-8 lg:justify-start justify-center">
+          <div className="flex items-center gap-8 lg:justify-start justify-center mt-4">
             <button
               id="slider-button-left"
-              class="swiper-button-prev group !p-2 flex justify-center items-center border border-solid border-indigo-600 !w-12 !h-12 transition-all duration-500 rounded-full !top-2/4 !-translate-y-8 !left-5 hover:bg-indigo-600"
+              className="swiper-button-prev group !p-2 flex justify-center items-center  !w-12 !h-12 transition-all duration-500 rounded-full !top-2/4 text-white !-translate-y-8 !left-5 hover:text-gray-700"
               data-carousel-prev
-            >
-              <svg
-                class="h-5 w-5 text-indigo-600 group-hover:text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-              >
-                <path
-                  d="M10.0002 11.9999L6 7.99971L10.0025 3.99719"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
+            ></button>
             <button
               id="slider-button-right"
-              class="swiper-button-next group !p-2 flex justify-center items-center border border-solid border-indigo-600 !w-12 !h-12 transition-all duration-500 rounded-full !top-2/4 !-translate-y-8 !right-5 hover:bg-indigo-600"
+              className="swiper-button-next group !p-2 flex justify-center items-center !w-12 !h-12 transition-all duration-500 rounded-full !top-2/4 !-translate-y-8 !right-5 hover:text-gray-700"
               data-carousel-next
-            >
-              <svg
-                class="h-5 w-5 text-indigo-600 group-hover:text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-              >
-                <path
-                  d="M5.99984 4.00012L10 8.00029L5.99748 12.0028"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
+            ></button>
           </div>
-          <div class="swiper-pagination"></div>
         </div>
       </div>
       {/* CARUSELLLLLLLLLL */}
