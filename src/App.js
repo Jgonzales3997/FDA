@@ -1,35 +1,33 @@
-import logo from "./logo.svg";
 import "./App.css";
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-} from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Carousel } from "@material-tailwind/react";
+import { Disclosure } from "@headlessui/react";
 
-const user = {
-  name: "Tom Cook",
-  email: "tom@example.com",
-  imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-};
+import Swiper from "swiper/bundle";
+
+import "swiper/css/bundle";
+
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
+  { name: "Dashboard", href: "#", current: false },
   { name: "Team", href: "#", current: false },
   { name: "Projects", href: "#", current: false },
   { name: "Calendar", href: "#", current: false },
   { name: "Reports", href: "#", current: false },
 ];
-const userNavigation = [
-  { name: "Your Profile", href: "#" },
-  { name: "Settings", href: "#" },
-  { name: "Sign out", href: "#" },
-];
+
+var swiper = new Swiper(".fraction-slide-carousel", {
+  loop: true,
+  fraction: true,
+  navigation: {
+    nextEl: ".fraction-slide-carousel .swiper-button-next",
+    prevEl: ".fraction-slide-carousel .swiper-button-prev",
+  },
+  pagination: {
+    el: ".fraction-slide-carousel .swiper-pagination",
+    type: "fraction",
+    formatFractionCurrent: function (number) {
+      return number;
+    },
+  },
+});
 
 const products = [
   {
@@ -81,238 +79,142 @@ function classNames(...classes) {
 function App() {
   return (
     /* Head 1 */
-    /* Head 1 */
     /* Div barra 1 */
     <div className="App">
-      <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
-        <div
-          aria-hidden="true"
-          className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
-        >
-          <div
-            style={{
-              clipPath:
-                "polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)",
-            }}
-            className="aspect-[577/310] w-[36.0625rem] bg-gradient-to-r from-[#ff80b5] to-[#9089fc] opacity-30"
-          />
-        </div>
-        <div
-          aria-hidden="true"
-          className="absolute left-[max(45rem,calc(50%+8rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
-        >
-          <div
-            style={{
-              clipPath:
-                "polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)",
-            }}
-            className="aspect-[577/310] w-[36.0625rem] bg-gradient-to-r from-[#ff80b5] to-[#9089fc] opacity-30"
-          />
-        </div>
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <p className="text-sm/6 text-gray-900">
-            <strong className="font-semibold">GeneriCon 2023</strong>
-            <svg
-              viewBox="0 0 2 2"
-              aria-hidden="true"
-              className="mx-2 inline size-0.5 fill-current"
-            >
-              <circle r={1} cx={1} cy={1} />
-            </svg>
-            Join us in Denver from June 7 – 9 to see what’s coming next.
-          </p>
-          <a
-            href="#"
-            className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
-          >
-            Register now <span aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
-        <div className="flex flex-1 justify-end">
-          <button
-            type="button"
-            className="-m-3 p-3 focus-visible:outline-offset-[-4px]"
-          >
-            <span className="sr-only">Dismiss</span>
-            <XMarkIcon aria-hidden="true" className="size-5 text-gray-900" />
-          </button>
-        </div>
+      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-4">
+        <p className="text-sm/6 text-gray-900 m-4">
+          Promociones zzzzzzzzzzzzzzzzzzzzzz
+        </p>
       </div>
+
       {/* FIN div 1 */}
       {/* ------------------------------------------------------------------ */}
       {/* Div barra negra */}
       <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex h-16 items-center justify-between">
+        <Disclosure as="nav" className="bg-gray-900">
+          <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-8">
+            <div className="flex h-20 items-center justify-between">
               <div className="flex items-center">
                 <div className="shrink-0">
                   <img
                     alt="Your Company"
-                    src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-                    className="size-8"
+                    src="https://png.pngtree.com/png-vector/20230512/ourmid/pngtree-lion-head-black-pattern-vector-png-image_7095274.png"
+                    className="size-13"
                   />
                 </div>
-                <div className="hidden md:block">
-                  <div className="ml-10 flex items-baseline space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        aria-current={item.current ? "page" : undefined}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "rounded-md px-3 py-2 text-sm font-medium"
-                        )}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="hidden md:block">
-                <div className="ml-4 flex items-center md:ml-6">
-                  <button
-                    type="button"
-                    className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                  >
-                    <span className="absolute -inset-1.5" />
-                    <span className="sr-only">View notifications</span>
-                    <BellIcon aria-hidden="true" className="size-6" />
-                  </button>
-
-                  {/* Profile dropdown */}
-                  <Menu as="div" className="relative ml-3">
-                    <div>
-                      <MenuButton className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                        <span className="absolute -inset-1.5" />
-                        <span className="sr-only">Open user menu</span>
-                        <img
-                          alt=""
-                          src={user.imageUrl}
-                          className="size-8 rounded-full"
-                        />
-                      </MenuButton>
-                    </div>
-                    <MenuItems
-                      transition
-                      className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
-                    >
-                      {userNavigation.map((item) => (
-                        <MenuItem key={item.name}>
-                          <a
-                            href={item.href}
-                            className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none"
-                          >
-                            {item.name}
-                          </a>
-                        </MenuItem>
-                      ))}
-                    </MenuItems>
-                  </Menu>
-                </div>
-              </div>
-              <div className="-mr-2 flex md:hidden">
-                {/* Mobile menu button */}
-                <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                  <span className="absolute -inset-0.5" />
-                  <span className="sr-only">Open main menu</span>
-                  <Bars3Icon
-                    aria-hidden="true"
-                    className="block size-6 group-data-[open]:hidden"
-                  />
-                  <XMarkIcon
-                    aria-hidden="true"
-                    className="hidden size-6 group-data-[open]:block"
-                  />
-                </DisclosureButton>
               </div>
             </div>
           </div>
+        </Disclosure>
 
-          <DisclosurePanel className="md:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+        <header className="bg-gray-800">
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline justify-center space-x-4 p-1">
               {navigation.map((item) => (
-                <DisclosureButton
+                <a
                   key={item.name}
-                  as="a"
                   href={item.href}
                   aria-current={item.current ? "page" : undefined}
                   className={classNames(
                     item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block rounded-md px-3 py-2 text-base font-medium"
+                      ? "bg-gray-800 text-gray-100"
+                      : "text-gray-100 hover:bg-gray-900 hover:text-gray-100",
+                    "rounded-md px-3 py-2 text-xl font-bold"
                   )}
                 >
                   {item.name}
-                </DisclosureButton>
+                </a>
               ))}
             </div>
-            <div className="border-t border-gray-700 pb-3 pt-4">
-              <div className="flex items-center px-5">
-                <div className="shrink-0">
-                  <img
-                    alt=""
-                    src={user.imageUrl}
-                    className="size-10 rounded-full"
-                  />
-                </div>
-                <div className="ml-3">
-                  <div className="text-base/5 font-medium text-white">
-                    {user.name}
-                  </div>
-                  <div className="text-sm font-medium text-gray-400">
-                    {user.email}
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  className="relative ml-auto shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                >
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon aria-hidden="true" className="size-6" />
-                </button>
-              </div>
-              <div className="mt-3 space-y-1 px-2">
-                {userNavigation.map((item) => (
-                  <DisclosureButton
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                  >
-                    {item.name}
-                  </DisclosureButton>
-                ))}
+          </div>
+        </header>
+      </div>
+
+      {/* CARUSELLLLLLLLLL */}
+      <div class="w-full relative">
+        <div class="swiper fraction-slide-carousel swiper-container relative">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">
+                <span class="text-3xl font-semibold text-indigo-600">
+                  Slide 1{" "}
+                </span>
               </div>
             </div>
-          </DisclosurePanel>
-        </Disclosure>
-        {/* Fin  */}
-        {/* -------------------------------------------------------*/}
-        {/* Div imagensota */}
-        <header className="bg-slate-200">sdsa</header>
-        <main>
-          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            {/* Your content */}
+            <div class="swiper-slide">
+              <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">
+                <span class="text-3xl font-semibold text-indigo-600">
+                  Slide 2{" "}
+                </span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">
+                <span class="text-3xl font-semibold text-indigo-600">
+                  Slide 3{" "}
+                </span>
+              </div>
+            </div>
           </div>
-        </main>
+          <div class="flex items-center gap-8 lg:justify-start justify-center">
+            <button
+              id="slider-button-left"
+              class="swiper-button-prev group !p-2 flex justify-center items-center border border-solid border-indigo-600 !w-12 !h-12 transition-all duration-500 rounded-full !top-2/4 !-translate-y-8 !left-5 hover:bg-indigo-600"
+              data-carousel-prev
+            >
+              <svg
+                class="h-5 w-5 text-indigo-600 group-hover:text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  d="M10.0002 11.9999L6 7.99971L10.0025 3.99719"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              id="slider-button-right"
+              class="swiper-button-next group !p-2 flex justify-center items-center border border-solid border-indigo-600 !w-12 !h-12 transition-all duration-500 rounded-full !top-2/4 !-translate-y-8 !right-5 hover:bg-indigo-600"
+              data-carousel-next
+            >
+              <svg
+                class="h-5 w-5 text-indigo-600 group-hover:text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  d="M5.99984 4.00012L10 8.00029L5.99748 12.0028"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
       </div>
-      {/* Fin  */}
-      {/* -------------------------------------------------------*/}
-      {/* Div productos */}
+      {/* CARUSELLLLLLLLLL */}
+      {/*FIN DASHBOARD*/}
+
       <div className="bg-slate-500">
-        <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <div className="mx-auto max-w-4xl px-4 py-16 sm:px-0 sm:py-24 lg:max-w-7xl lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">
             Customers also purchased
           </h2>
 
-          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-4 lg:grid-cols-4 xl:gap-x-8">
             {products.map((product) => (
               <div key={product.id} className="group relative">
                 <img
@@ -341,6 +243,38 @@ function App() {
           </div>
         </div>
       </div>
+
+      <div className="flex w-full flex-col border-opacity-50">
+        <div className="card bg-base-300 rounded-box grid h-20 place-items-center">
+          content
+        </div>
+        <div className="divider">OR</div>
+        <div className="card bg-base-300 rounded-box grid h-20 place-items-center">
+          content
+        </div>
+      </div>
+      <footer class="footer bg-neutral text-neutral-content p-10">
+        <nav>
+          <h6 class="footer-title">Services</h6>
+          <a class="link link-hover">Branding</a>
+          <a class="link link-hover">Design</a>
+          <a class="link link-hover">Marketing</a>
+          <a class="link link-hover">Advertisement</a>
+        </nav>
+        <nav>
+          <h6 class="footer-title">Company</h6>
+          <a class="link link-hover">About us</a>
+          <a class="link link-hover">Contact</a>
+          <a class="link link-hover">Jobs</a>
+          <a class="link link-hover">Press kit</a>
+        </nav>
+        <nav>
+          <h6 class="footer-title">Legal</h6>
+          <a class="link link-hover">Terms of use</a>
+          <a class="link link-hover">Privacy policy</a>
+          <a class="link link-hover">Cookie policy</a>
+        </nav>
+      </footer>
     </div>
   );
 }

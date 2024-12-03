@@ -36,3 +36,41 @@
     transform: rotate(360deg);
   }
 }
+
+.carousel-item2 {
+  box-sizing: content-box;
+  display: flex;
+  flex: none;
+}
+
+/* Logo */
+
+.size-13 {
+  width: 4rem /* 64px */;
+  height: 4rem /* 64px */;
+}
+/* Logo */
+
+/*Carousel*/
+
+/*Ancho img*/
+
+.h-97 {
+  height: 28rem /* 448 px*/;
+}
+
+/*Ancho img*/
+
+.swiper-wrapper {
+  width: 100%;
+  height: max-content !important;
+  padding-bottom: 64px !important;
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+  position: relative;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: #4f46e5 !important;
+}
+
+/*Carousel*/
