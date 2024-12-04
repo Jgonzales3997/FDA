@@ -53,24 +53,34 @@
 
 /*Carousel*/
 
-/*Ancho img*/
+/*Alto img*/
 
 .h-97 {
-  height: 28rem /* 448 px*/;
+  height: 40rem /* 448 px*/;
 }
 
-/*Ancho img*/
+.h-97mb {
+  height: 20rem /* 320 px*/;
+}
+
+/*Alto img*/
 
 .swiper-wrapper {
   width: 100%;
-  height: max-content !important;
-  padding-bottom: 64px !important;
+
   -webkit-transition-timing-function: linear !important;
   transition-timing-function: linear !important;
   position: relative;
 }
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: #4f46e5 !important;
+}
+.gap-x-13 {
+  column-gap: 5rem /* 64px */;
+}
+
+.pt-17 {
+  margin-top: 6rem; /*96px */
 }
 
 /*Carousel*/

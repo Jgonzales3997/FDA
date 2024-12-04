@@ -4,6 +4,9 @@ import { Disclosure } from "@headlessui/react";
 import Swiper from "swiper/bundle";
 
 import "swiper/css/bundle";
+import { Ripple, initTWE } from "tw-elements";
+
+initTWE({ Ripple });
 
 const navigation = [
   { name: "Dashboard", href: "#", current: false },
@@ -29,49 +32,6 @@ var swiper = new Swiper(".fraction-slide-carousel", {
   },
 });
 
-const products = [
-  {
-    id: 1,
-    name: "Basic Tee",
-    href: "#",
-    imageSrc:
-      "https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
-  },
-  {
-    id: 2,
-    name: "Basic Tee",
-    href: "#",
-    imageSrc:
-      "https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-02.jpg",
-    imageAlt: "Front of men's Basic Tee in white.",
-    price: "$35",
-    color: "White",
-  },
-  {
-    id: 3,
-    name: "Vintage Jeans",
-    href: "#",
-    imageSrc:
-      "https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-03.jpg",
-    imageAlt: "Front of men's Vintage Jeans in blue.",
-    price: "$50",
-    color: "Blue",
-  },
-  {
-    id: 4,
-    name: "Casual Shirt",
-    href: "#",
-    imageSrc:
-      "https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-04.jpg",
-    imageAlt: "Front of men's Casual Shirt in red.",
-    price: "$40",
-    color: "Red",
-  },
-];
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -81,35 +41,20 @@ function App() {
     /* Head 1 */
     /* Div barra 1 */
     <div className="App">
-      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-4">
-        <p className="text-sm/6 text-gray-900 m-4">
-          Promociones zzzzzzzzzzzzzzzzzzzzzz
-        </p>
-      </div>
-
       {/* FIN div 1 */}
       {/* ------------------------------------------------------------------ */}
       {/* Div barra negra */}
-      <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-900">
-          <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-8">
-            <div className="flex h-20 items-center justify-between">
-              <div className="flex items-center">
-                <div className="shrink-0">
-                  <img
-                    alt="Your Company"
-                    src="https://png.pngtree.com/png-vector/20230512/ourmid/pngtree-lion-head-black-pattern-vector-png-image_7095274.png"
-                    className="size-13"
-                  />
-                </div>
-              </div>
-            </div>
+      <div className="min-h-full  ">
+        <header className="bg-gray-800  flex-no-wrap fixed top-0 z-10 flex w-full items-center justify-center py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-center lg:py-4">
+          <div className="shrink-0">
+            <img
+              alt="Your Company"
+              src="https://png.pngtree.com/png-vector/20230512/ourmid/pngtree-lion-head-black-pattern-vector-png-image_7095274.png"
+              className="size-13"
+            />
           </div>
-        </Disclosure>
-
-        <header className="bg-gray-800">
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline justify-center space-x-4 p-1">
+          <div className="hidden md:block ">
+            <div className="ml-10 flex items-baseline justify-center space-x-4 p-1 pb-1.5 ">
               {navigation.map((item) => (
                 <a
                   key={item.name}
@@ -118,7 +63,7 @@ function App() {
                   className={classNames(
                     item.current
                       ? "bg-gray-800 text-gray-100"
-                      : "text-gray-100 hover:bg-gray-900 hover:text-gray-100",
+                      : "text-gray-100 hover:bg-gray-100 hover:text-gray-800",
                     "rounded-md px-3 py-2 text-xl font-bold"
                   )}
                 >
@@ -131,46 +76,52 @@ function App() {
       </div>
 
       {/* CARUSELLLLLLLLLL */}
-      <div class="w-full relative">
-        <div class="swiper fraction-slide-carousel swiper-container relative">
-          <div class="swiper-wrapper">
-            <div className="swiper-slide">
-              <div className="bg-indigo-50  h-96 flex justify-center items-center">
+      <div className="w-full relative">
+        <div className="swiper fraction-slide-carousel swiper-container relative">
+          <div className="swiper-wrapper   h-97mb sm:h-97 ">
+            <div className="swiper-slide  ">
+              <div className="bg-indigo-50 h-97  flex justify-center items-center overflow-hidden">
+                {" "}
+                {/* Agrega overflow-hidden */}
                 <img
-                  src="https://i.pinimg.com/originals/aa/96/94/aa9694d4a2e2db1a5dfbabac200cc349.png" // Reemplaza esta URL con la URL de tu imagen
-                  alt="Descripción de la imagen 1" // Asegúrate de proporcionar un texto alternativo
-                  className="h-full w-full object-cover   " // Ajusta las clases según sea necesario
+                  src="https://i.pinimg.com/originals/aa/96/94/aa9694d4a2e2db1a5dfbabac200cc349.png"
+                  alt="Descripción de la imagen 1"
+                  className=" w-full h-full object-cover"
                 />
               </div>
             </div>
             <div className="swiper-slide">
-              <div className="bg-indigo-50  h-96 flex justify-center items-center">
+              <div className="bg-indigo-50 h-97 flex justify-center items-center overflow-hidden">
+                {" "}
+                {/* Agrega overflow-hidden */}
                 <img
-                  src="https://i.pinimg.com/originals/d5/52/d0/d552d04d267525ab2cda53ff83f2c833.jpg" // Reemplaza esta URL con la URL de tu imagen
-                  alt="Descripción de la imagen 2" // Asegúrate de proporcionar un texto alternativo
-                  className="h-full w-full object-cover " // Ajusta las clases según sea necesario
+                  src="https://i.pinimg.com/originals/d5/52/d0/d552d04d267525ab2cda53ff83f2c833.jpg"
+                  alt="Descripción de la imagen 2"
+                  className=" w-full h-full object-cover"
                 />
               </div>
             </div>
             <div className="swiper-slide">
-              <div className="bg-indigo-50  h-96 flex justify-center items-center">
+              <div className="bg-indigo-50 h-97 flex justify-center items-center overflow-hidden">
+                {" "}
+                {/* Agrega overflow-hidden */}
                 <img
-                  src="https://64.media.tumblr.com/3ec70568f090c4fd2902a542b85c11c6/920acd6e6d068e7f-d4/s2560x500/77c26d4d260e290b01eb4d174d1c850a8689ae2d.png" // Reemplaza esta URL con la URL de tu imagen
-                  alt="Descripción de la imagen 3" // Asegúrate de proporcionar un texto alternativo
-                  className="h-full w-full object-cover " // Ajusta las clases según sea necesario
+                  src="https://64.media.tumblr.com/3ec70568f090c4fd2902a542b85c11c6/920acd6e6d068e7f-d4/s2560x500/77c26d4d260e290b01eb4d174d1c850a8689ae2d.png"
+                  alt="Descripción de la imagen 3"
+                  className=" w-full h-full object-cover"
                 />
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-8 lg:justify-start justify-center mt-4">
+          <div className="flex items-center gap-8 lg:justify-start justify-center ">
             <button
               id="slider-button-left"
-              className="swiper-button-prev group !p-2 flex justify-center items-center  !w-12 !h-12 transition-all duration-500 rounded-full !top-2/4 text-white !-translate-y-8 !left-5 hover:text-gray-700"
+              className="swiper-button-prev group  flex justify-center items-center !w-12 !h-12 transition-all duration-500 rounded-full !top-2/4 text-white !-translate-y-8 !left-5 hover:text-gray-700"
               data-carousel-prev
             ></button>
             <button
               id="slider-button-right"
-              className="swiper-button-next group !p-2 flex justify-center items-center !w-12 !h-12 transition-all duration-500 rounded-full !top-2/4 !-translate-y-8 !right-5 hover:text-gray-700"
+              className="swiper-button-next group  flex justify-center items-center !w-12 !h-12 transition-all duration-500 rounded-full !top-2/4 !-translate-y-8 !right-5 hover:text-gray-700"
               data-carousel-next
             ></button>
           </div>
@@ -179,41 +130,107 @@ function App() {
       {/* CARUSELLLLLLLLLL */}
       {/*FIN DASHBOARD*/}
 
-      <div className="bg-slate-500">
-        <div className="mx-auto max-w-4xl px-4 py-16 sm:px-0 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-            Customers also purchased
-          </h2>
+      <div className="flex flex-wrap items-center justify-center bg-gray-200 gap-x-4 gap-y-4">
+        <p className="text-sm/6 text-gray-900 m-4">
+          Promociones zzzzzzzzzzzzzzzzzzzzzz
+        </p>
+      </div>
 
-          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-4 lg:grid-cols-4 xl:gap-x-8">
-            {products.map((product) => (
-              <div key={product.id} className="group relative">
-                <img
-                  alt={product.imageAlt}
-                  src={product.imageSrc}
-                  className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
-                />
-                <div className="mt-4 flex justify-between">
-                  <div>
-                    <h3 className="text-sm text-gray-700">
-                      <a href={product.href}>
-                        <span aria-hidden="true" className="absolute inset-0" />
-                        {product.name}
-                      </a>
-                    </h3>
-                    <p className="mt-1 text-sm text-gray-500">
-                      {product.color}
-                    </p>
-                  </div>
-                  <p className="text-sm font-medium text-gray-900">
-                    {product.price}
-                  </p>
-                </div>
-              </div>
-            ))}
+      {/*Productos */}
+      <div className="bg-gray-900">
+        <div class="p-5  grid grid-cols-2 gap-x-12 gap-y-12 sm:p-10 md:p-10 lg:p-15 sm:grid-cols-2 lg:grid-cols-4 xl:p-20 justify-items-center">
+          {/* P1 */}
+          <div class="relative max-w-xs border border-solid bg-gray-700 border-gray-200 rounded-2xl transition-all duration-500 ">
+            <div class="block overflow-hidden rounded-tl-2xl rounded-tr-2xl hover">
+              <img
+                class=" opacity-80 transition duration-300 ease-in-out hover:opacity-100 hover:scale-110"
+                src="https://i.pinimg.com/474x/a3/72/0d/a3720d50be0084cd88a10952a81ca82c.jpg"
+                alt="Card image"
+              />
+            </div>
+            <div class="p-4">
+              <h4 class="text-base font-semibold text-gray-50 mb-2 capitalize transition-all duration-500 ">
+                Fast Transaction
+              </h4>
+              <p class="text-sm font-normal text-gray-100 transition-all duration-500 leading-5 mb-5">
+                {" "}
+                Provides faster transaction, so money arrives in realtime{" "}
+              </p>
+              <button class="bg-gray-100 shadow-sm rounded-full py-2 px-5 text-xs text-gray-900 font-semibold hover:bg-gray-900 hover:text-gray-100">
+                Read More
+              </button>
+            </div>
+          </div>
+          {/* P2 */}
+          <div class="relative max-w-xs border border-solid bg-gray-700 border-gray-200 rounded-2xl transition-all duration-500 ">
+            <div class="block overflow-hidden rounded-tl-2xl rounded-tr-2xl">
+              <img
+                class=" opacity-90 transition duration-300 ease-in-out hover:opacity-100 hover:scale-110"
+                src="https://www.chaynikam.info/prevgame/World_of_Warcraft-ver.jpg"
+                alt="Card image"
+              />
+            </div>
+            <div class="p-4">
+              <h4 class="text-base font-semibold text-gray-50 mb-2 capitalize transition-all duration-500 ">
+                Fast Transaction
+              </h4>
+              <p class="text-sm font-normal text-gray-100 transition-all duration-500 leading-5 mb-5">
+                {" "}
+                Provides faster transaction, so money arrives in realtime{" "}
+              </p>
+              <button class="bg-gray-100 shadow-sm rounded-full py-2 px-5 text-xs text-gray-900 font-semibold hover:bg-gray-900 hover:text-gray-100">
+                Read More
+              </button>
+            </div>
+          </div>
+          {/* P3 */}
+          <div class="relative max-w-xs border border-solid bg-gray-700 border-gray-200 rounded-2xl transition-all duration-500 ">
+            <div class="block overflow-hidden rounded-tl-2xl rounded-tr-2xl">
+              <img
+                class=" opacity-90 transition duration-300 ease-in-out hover:opacity-100 hover:scale-110"
+                src="https://digiseller.mycdn.ink/img.ashx?idc=1078"
+                alt="Card image"
+              />
+            </div>
+            <div class="p-4">
+              <h4 class="text-base font-semibold text-gray-50 mb-2 capitalize transition-all duration-500 ">
+                Fast Transaction
+              </h4>
+              <p class="text-sm font-normal text-gray-100 transition-all duration-500 leading-5 mb-5">
+                {" "}
+                Provides faster transaction, so money arrives in realtime{" "}
+              </p>
+              <button class="bg-gray-100 shadow-sm rounded-full py-2 px-5 text-xs text-gray-900 font-semibold hover:bg-gray-900 hover:text-gray-100">
+                Read More
+              </button>
+            </div>
+          </div>
+          {/* P4 */}
+          <div class="relative max-w-xs border border-solid bg-gray-700 border-gray-200 rounded-2xl transition-all duration-500 ">
+            <div class="block overflow-hidden rounded-tl-2xl rounded-tr-2xl">
+              <img
+                class=" opacity-90 transition duration-300 ease-in-out hover:opacity-100 hover:scale-110"
+                src="https://digiseller.mycdn.ink/img.ashx?idc=986"
+                alt="Card image"
+              />
+            </div>
+            <div class="p-4">
+              <h4 class="text-base font-semibold text-gray-50 mb-2 capitalize transition-all duration-500 ">
+                Fast Transaction
+              </h4>
+              <p class="text-sm font-normal text-gray-100 transition-all duration-500 leading-5 mb-5">
+                {" "}
+                Provides faster transaction, so money arrives in realtime{" "}
+              </p>
+              <button class="bg-gray-100 shadow-sm rounded-full py-2 px-5 text-xs text-gray-900 font-semibold hover:bg-gray-900 hover:text-gray-100">
+                Read More
+              </button>
+            </div>
           </div>
         </div>
       </div>
+
+      {/*Fin productos */}
 
       <div className="flex w-full flex-col border-opacity-50">
         <div className="card bg-base-300 rounded-box grid h-20 place-items-center">
