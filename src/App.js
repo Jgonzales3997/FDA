@@ -9,10 +9,12 @@ import { Ripple, initTWE } from "tw-elements";
 initTWE({ Ripple });
 
 const navigation = [
-  { name: "Carta", href: "#", current: false },
+  { name: "Pollo 80", href: "#", current: false },
+  { name: "Entradas y Piqueos", href: "#", current: false },
+  { name: "Parrillas", href: "#", current: false },
   { name: "Promociones", href: "#", current: false },
-  { name: "Nosotros", href: "#", current: false },
   { name: "Delivery", href: "#", current: false },
+  { name: "Carta", href: "#", current: false },
   /*{ name: "Reports", href: "#", current: false },*/
 ];
 
@@ -44,8 +46,8 @@ function App() {
       {/* FIN div 1 */}
       {/* ------------------------------------------------------------------ */}
       {/* Div barra negra */}
-      <div className="min-h-full  ">
-        <header className="bg-gray-800  flex-no-wrap fixed top-0 z-10 flex w-full items-center justify-center py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-center lg:py-4">
+      <div className="min-h-full">
+        <header className="bg-black flex-no-wrap fixed top-0 z-10 flex w-full items-center justify-center py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-center lg:py-4">
           <div className="shrink-0">
             <img
               alt="Your Company"
@@ -53,8 +55,8 @@ function App() {
               className="size-13 transition duration-300 ease-in-out hover:scale-110"
             />
           </div>
-          <div className="hidden md:block ">
-            <div className="ml-10 flex items-baseline justify-center space-x-4 p-1 pb-1.5 ">
+          <div className="hidden md:block">
+            <div className="ml-15 flex items-baseline justify-center space-x-10 p-1 pb-1.5">
               {navigation.map((item) => (
                 <a
                   key={item.name}
@@ -62,8 +64,8 @@ function App() {
                   aria-current={item.current ? "page" : undefined}
                   className={classNames(
                     item.current
-                      ? "bg-gray-800 text-gray-100"
-                      : "text-gray-100 hover:bg-gray-100 hover:text-gray-800",
+                      ? "bg-black text-white"
+                      : "text-white hover:bg-white hover:text-black transition-colors duration-500 ease-in-out",
                     "rounded-md px-3 py-2 text-xl font-bold"
                   )}
                 >
